@@ -226,7 +226,7 @@ export function on(
       event,
       handler,
       // 是这段代码的问题，如果capture改为true，则可以吸顶，感觉和事件捕获有关
-      supportsPassive ? { capture: true, passive } : false
+      supportsPassive ? { capture: false, passive } : false
     );
   }
 }
