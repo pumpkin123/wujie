@@ -12,6 +12,7 @@ import AButton from "ant-design-vue/es/button";
 import ASelect from "ant-design-vue/es/select";
 import AModal from "ant-design-vue/es/modal";
 import APopover from "ant-design-vue/es/popover";
+import { Sticky } from "vant";
 import "./pageLifeTest";
 import "element-ui/lib/theme-chalk/base.css";
 import "element-ui/lib/theme-chalk/tag.css";
@@ -26,6 +27,8 @@ import "ant-design-vue/es/select/style/index.css";
 import "ant-design-vue/es/modal/style/index.css";
 import "ant-design-vue/es/popover/style/index.css";
 import "./index.css";
+import "vant/lib/icon/local.css";
+import 'vant/lib/index.css';
 
 const base = process.env.NODE_ENV === "production" ? "/demo-vue2/" : "";
 
@@ -33,6 +36,7 @@ const base = process.env.NODE_ENV === "production" ? "/demo-vue2/" : "";
 [AButton, ASelect, AModal, APopover].forEach((element) => Vue.use(element));
 
 Vue.use(VueRouter);
+Vue.use(Sticky)
 
 Vue.config.productionTip = false;
 
