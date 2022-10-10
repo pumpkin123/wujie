@@ -221,16 +221,12 @@ export function on(
   handler,
   passive 
 ) {
-  console.warn('target666',target);
-  console.warn('event666',event);
-  console.warn('handler666',handler);
-  console.warn('isServer666',isServer);
   if (!isServer) {
-    window.addEventListener(
+    target.addEventListener(
       event,
       handler,
       // 是这段代码的问题，如果capture改为true，则可以吸顶，感觉和事件捕获有关
-      supportsPassive ? { capture: false, passive } : false
+      supportsPassive ? { capture: true, passive } : false
     );
   }
 }
